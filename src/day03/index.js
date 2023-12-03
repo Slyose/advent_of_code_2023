@@ -6,8 +6,6 @@ const part1 = (rawInput) => {
   const input = parseInput(rawInput)
   const linesArr = input.split("\n")
 
-  const numbersArr = input.match(/[\d]+/g)
-
   const symbolsRegex = /[^\d\.]/g
 
   let symbolsData = []
@@ -109,8 +107,6 @@ const part1 = (rawInput) => {
 const part2 = (rawInput) => {
   const input = parseInput(rawInput)
   const linesArr = input.split("\n")
-
-  const numbersArr = input.match(/[\d]+/g)
 
   const symbolsRegex = /[^\d\.]/g
 
@@ -216,7 +212,8 @@ run({
   part1: {
     tests: [
       {
-        input: `467..114..
+        input: `
+        467..114..
         ...*......
         ..35..633.
         ......#...

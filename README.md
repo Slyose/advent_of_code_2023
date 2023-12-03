@@ -69,23 +69,23 @@ npm start 1
 
 ```
 Day 01
-Time part 1: -
-Time part 2: -
-Both parts: -
+Time part 1: 0.391792ms
+Time part 2: 1.520667ms
+Both parts: 1.912459ms
 ```
 
 ```
 Day 02
-Time part 1: -
-Time part 2: -
-Both parts: -
+Time part 1: 0.338416ms
+Time part 2: 0.215708ms
+Both parts: 0.5541240ms
 ```
 
 ```
 Day 03
 Time part 1: 14.969ms
-Time part 2: 17368.285ms
-Both parts: 17383.254ms
+Time part 2: 39.254875ms
+Both parts: 57.876ms
 ```
 
 ```
