@@ -41,6 +41,8 @@
 
 _Click a badge to go to the specific day._
 
+_My solutions are loated inside index.js files in each day's folder_
+
 ---
 
 ## Installation
@@ -244,7 +246,7 @@ Both parts: -
 
 ```
 Total stars: 2/50
-Total time: 17383.254ms
+Total time: 56.024ms
 ```
 
 <!--/RESULTS-->
