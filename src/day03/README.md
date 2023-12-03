@@ -19,4 +19,4 @@ Task description: [link](https://adventofcode.com/2023/day/3)
     - Except that I now need to keep more data about the partnumbers. 2 Criteria need to be tracked - what kind of symbol was matched ( * or non star), and how many pairs
     - if they matched on a * with 2, then they should be multiplied by eachother before being added to the num
     - gonna revert from the string-based comparison, to a more OOP approach where each symbol will now keep track of it's numbers. Then I can reduce the symbolsWithParts to multiply if criteria are met.
-    - As a result of the refactor of part 1, this currently still tracks partnumbers of all types, not just gears. Ideally that would be refactored out
+    - As a result of the refactor of part 1, this currently still tracks matches for symbols of all types, not just gears. That could be refactored out

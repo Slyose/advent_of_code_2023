@@ -65,13 +65,12 @@ const part1 = (rawInput) => {
   const isSymbolTouching = (num, symbolCoordsStr) => {
     const adjacentCoords = []
     adjacentCoords.push(
-      //horizontal coords - either side of the number
+      // Horizontal coords - either side of the number
       [num.StartingXCoord - 1, num.yCoord],
       [num.EndingXCoord + 1, num.yCoord],
-      // diagonals at start of number
+      // Diagonals at start of number
       [num.StartingXCoord - 1, num.yCoord - 1],
       [num.StartingXCoord - 1, num.yCoord + 1],
-
       // Diagonals at the end of the number
       [num.EndingXCoord + 1, num.yCoord - 1],
       [num.EndingXCoord + 1, num.yCoord + 1],
@@ -119,14 +118,8 @@ const part2 = (rawInput) => {
   let numsData = []
   let validPartNumbers = []
 
-  // turn each line into an array
-  // grab data on each symbol, x and y values
-  // do a function on each line to get objects with number, y axis, starting x axis and ending x axis
-  // function that goes through each number and checks for a matching symbol
-  // if matching, push to an array of valud numbers
-
   for (let [index, line] of linesArr.entries()) {
-    //Grab symbols & numbers data for the line
+    // Grab symbols & numbers data for each line
     let yCoord = index
     let newNumber = ""
     let newNumberStartingXCoord
@@ -162,12 +155,6 @@ const part2 = (rawInput) => {
     }
   }
 
-  // const symbolCoordsStr = symbolsData.reduce((coords, coord) => {
-  //   console.log({ coord })
-  //   coords.push(`${coord.xCoord}, ${coord.yCoord}`) // why a string? ez to check equality.
-  //   return coords
-  // }, [])
-
   const findAdjacentCoords = (num, symbolCoordsStr) => {
     const adjacentCoords = []
     adjacentCoords.push(
@@ -177,7 +164,6 @@ const part2 = (rawInput) => {
       // diagonals at start of number
       [num.StartingXCoord - 1, num.yCoord - 1],
       [num.StartingXCoord - 1, num.yCoord + 1],
-
       // Diagonals at the end of the number
       [num.EndingXCoord + 1, num.yCoord - 1],
       [num.EndingXCoord + 1, num.yCoord + 1],
@@ -194,7 +180,6 @@ const part2 = (rawInput) => {
 
   let symbolsWithMatches = [...symbolsData]
   for (let num of numsData) {
-    console.log(num)
     const adjacentCoords = findAdjacentCoords(num)
 
     for (let adjacentCoord of adjacentCoords) {
@@ -207,27 +192,17 @@ const part2 = (rawInput) => {
         }
       }
     }
-
-    console.log({ adjacentCoords })
-    console.log({ symbolsData })
-
-    // I now have each symbol, with it's corresponding matches. All that's left
-    // is to reduce an array of objects into a sum
-    validPartNumbers = []
-
-    // validPartNumbers.push(num.number)
   }
+
+  validPartNumbers = []
+
   for (let symbolWithMatch of symbolsWithMatches) {
-    console.log({ symbolWithMatch })
     if (
-      symbolWithMatch.matches &&
       symbolWithMatch.symbol === "*" &&
       symbolWithMatch.matches.length === 2
     ) {
-      console.log(symbolWithMatch.matches[0])
       validPartNumbers.push(
-        Number(symbolWithMatch.matches[0].number) *
-          Number(symbolWithMatch.matches[1].number),
+        symbolWithMatch.matches[0].number * symbolWithMatch.matches[1].number,
       )
     }
   }
