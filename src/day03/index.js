@@ -15,8 +15,8 @@ const part1 = (rawInput) => {
   // turn each line into an array
   // grab data on each symbol, x and y values
   // do a function on each line to get objects with number, y axis, starting x axis and ending x axis
-  // function that goes through each number and checks for a matching symbol
-  // if matching, push to an array of valud numbers
+  // function that goes through each number and checks the symbolsData for an adjacent symbol
+  // if matching, push to an array of valid numbers , then sum those in a reduce
 
   for (let [index, line] of linesArr.entries()) {
     //Grab symbols & numbers data for the line
