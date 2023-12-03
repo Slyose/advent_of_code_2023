@@ -11,22 +11,17 @@ const part1 = (rawInput) => {
 
   let validGames = []
 
+  const findHighest = (game, colourRegex) => {
+    let colourMatches = game.match(colourRegex)
+    return colourMatches.reduce((total, colourMatchStr) => {
+      return total < parseInt(colourMatchStr) ? parseInt(colourMatchStr) : total
+    }, 0)
+  }
+
   for (let game of gamesArray) {
-
-    const blueMatches = game.match(blueRegex)
-    const highestBlue = blueMatches.reduce((total, blueMatchStr) => {
-      return total < parseInt(blueMatchStr) ? parseInt(blueMatchStr) : total
-    }, 0)
-
-    const redMatches = game.match(redRegex)
-    const highestRed = redMatches.reduce((total, redMatchStr) => {
-      return total < parseInt(redMatchStr) ? parseInt(redMatchStr) : total
-    }, 0)
-
-    const greenMatches = game.match(greenRegex)
-    const highestGreen = greenMatches.reduce((total, greenMatchStr) => {
-      return total < parseInt(greenMatchStr) ? parseInt(greenMatchStr) : total
-    }, 0)
+    const highestBlue = findHighest(game, blueRegex)
+    const highestRed = findHighest(game, redRegex)
+    const highestGreen = findHighest(game, greenRegex)
 
     if (highestBlue <= 14 && highestRed <= 12 && highestGreen <= 13) {
       validGames.push(game)
@@ -34,7 +29,7 @@ const part1 = (rawInput) => {
   }
 
   let sumValidGamesID = 0
-  
+
   for (let validGame of validGames) {
     sumValidGamesID += Number(validGame.match(/[\d]+/g)[0])
   }
@@ -51,23 +46,17 @@ const part2 = (rawInput) => {
 
   let sumOfPowers = 0
 
+  const findHighest = (game, colourRegex) => {
+    let colourMatches = game.match(colourRegex)
+    return colourMatches.reduce((total, colourMatchStr) => {
+      return total < parseInt(colourMatchStr) ? parseInt(colourMatchStr) : total
+    }, 0)
+  }
+
   for (let game of gamesArray) {
-
-    const blueMatches = game.match(blueRegex)
-    const highestBlue = blueMatches.reduce((total, blueMatchStr) => {
-      return total < parseInt(blueMatchStr) ? parseInt(blueMatchStr) : total
-    }, 0)
-
-    const redMatches = game.match(redRegex)
-    const highestRed = redMatches.reduce((total, redMatchStr) => {
-      return total < parseInt(redMatchStr) ? parseInt(redMatchStr) : total
-    }, 0)
-
-    const greenMatches = game.match(greenRegex)
-    const highestGreen = greenMatches.reduce((total, greenMatchStr) => {
-      return total < parseInt(greenMatchStr) ? parseInt(greenMatchStr) : total
-    }, 0)
-
+    const highestBlue = findHighest(game, blueRegex)
+    const highestRed = findHighest(game, redRegex)
+    const highestGreen = findHighest(game, greenRegex)
 
     let power = highestBlue * highestRed * highestGreen
 
