@@ -99,7 +99,7 @@ Both parts: 1.653ms
 
 ```
 Day 05
-Time part 1: -
+Time part 1: 0.432ms
 Time part 2: 505438.741ms
 Both parts: 505438.741ms
 ```
