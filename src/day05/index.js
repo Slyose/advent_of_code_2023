@@ -50,7 +50,6 @@ const part1 = (rawInput) => {
         return range.destinationStart + (value - range.seedStart)
       }
     }
-    // thank goodness it doesn't need a binary search
     return value
   }
 
@@ -131,9 +130,9 @@ const part2 = (rawInput) => {
   }
 
   let lowestLocation = Infinity
-  for (let interval of seedsRangeDictionary) {
-    const seedStart = interval[0]
-    const seedLength = interval[1]
+  for (const seedRange of seedsRangeDictionary) {
+    const seedStart = seedRange[0]
+    const seedLength = seedRange[1]
 
     let seedCount = 0
     while (seedCount < seedLength) {

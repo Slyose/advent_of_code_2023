@@ -68,7 +68,7 @@ will start with an object
 The problem : Above approach exceeds heap memory due to large numbers
 creating a massive dictinary
 
-instead of tracking exact digits in dictionary, can keep interval data and calculate desination programatically
+instead of tracking exact digits in dictionary, can keep track of ranges and calculate desination programatically
 this will use much less memory
 properties: sourceStart sourceEnd and destination start
 sort then binary search to find the correct range (??)
