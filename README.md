@@ -41,7 +41,7 @@
 
 _Click a badge to go to the specific day._
 
-_My solutions are loated inside index.js files in each day's folder_
+_My solutions are located inside index.js files in each day's folder_
 
 ---
 
