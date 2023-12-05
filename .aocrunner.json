@@ -70,11 +70,11 @@
     {
       "part1": {
         "solved": true,
-        "result": null,
+        "result": "309796150",
         "attempts": [
           "12950548"
         ],
-        "time": null
+        "time": 0.432
       },
       "part2": {
         "solved": true,
