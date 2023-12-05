@@ -70,11 +70,6 @@ const part1 = (rawInput) => {
 const part2 = (rawInput) => {
   const input = parseInput(rawInput)
 
-  // pt 2 changes
-  // create another range dictionary for seeds
-  // go through intervals, running findDestination for each
-  // keep running total between seeds
-
   const seedNumberRegex = /seeds: ([\s*\d]+)/
   const seedsRegexResult = input.match(seedNumberRegex)[1]
   const seeds = seedsRegexResult.match(/\d+/g).map(Number)
@@ -127,9 +122,6 @@ const part2 = (rawInput) => {
   }
 
   const findDestination = (value, rangeDictionary) => {
-    // TODO: .sort then refactor into binary search
-    // works without but takes around 10 minutes
-
     for (let range of rangeDictionary) {
       if (value >= range.seedStart && value <= range.seedEnd) {
         return range.destinationStart + (value - range.seedStart)
