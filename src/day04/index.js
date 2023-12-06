@@ -1,19 +1,14 @@
 import run from "aocrunner"
 
-const parseInput = (rawInput) => rawInput
-
-const part1 = (rawInput) => {
-  const input = parseInput(rawInput)
-
+const part1 = (input) => {
   const cardsArr = input.split("\n")
 
   let total = 0
 
   for (let card of cardsArr) {
     let splitCard = card.split("|")
-    let winningNumbers = splitCard[0].split(":")
+    let winningNumbers = splitCard[0].split(":")[1].match(/[\d]+/g)
     let numbersIHave = splitCard[1].match(/[\d]+/g)
-    winningNumbers = winningNumbers[1].match(/[\d]+/g)
 
     const winningNumbersIHave = []
 
@@ -22,18 +17,12 @@ const part1 = (rawInput) => {
         winningNumbersIHave.push(winningNumber)
     }
 
-    // variable to store the total points
     let cardPoints = 0
 
     let multiplier = 1
 
     for (let i = 0; i < winningNumbersIHave.length; i++) {
-      const pointsForCurrentCard = multiplier
-
-      // Add the points for the current card to the total
       cardPoints = multiplier
-
-      // Double the multiplier for subsequent cards
       multiplier *= 2
     }
     total += cardPoints
@@ -42,9 +31,7 @@ const part1 = (rawInput) => {
   return total
 }
 
-const part2 = (rawInput) => {
-  const input = parseInput(rawInput)
-
+const part2 = (input) => {
   const originalCards = input.split("\n")
 
   let liveCards = []
@@ -81,11 +68,10 @@ const part2 = (rawInput) => {
     let numberOfMatches = winningNumbersIHave.length
 
     if (numberOfMatches > 0) {
-      // this part figures out the cardnumbers of the cards that should be cloned
+      // this part figures out the cardNumbers of the cards that should be copied
       for (
         let currentCopyNumber = Number(cardNumber) + 1;
-        Number(currentCopyNumber) <=
-        Number(cardNumber) + Number(numberOfMatches);
+        Number(currentCopyNumber) <= Number(cardNumber) + Number(numberOfMatches);
         currentCopyNumber++
       ) {
         copyNumbers.push(currentCopyNumber)
@@ -96,9 +82,9 @@ const part2 = (rawInput) => {
       let copyCard = liveCards.find((card) => {
         return card.cardNumber == copyNumber
       })
-      copyCard.quantity += currentCard.quantity
       //each card has a quantity property of how many there are
-      // i just take the impact that card would have had and do it ${quantity} times
+      // i take the impact that 1 card would have had and do it ${quantity} times
+      copyCard.quantity += currentCard.quantity
     }
 
     totalScratchcards += quantity
