@@ -2,10 +2,8 @@ import run from "aocrunner"
 
 const part1 = (input) => {
   const splitInput = input.split("\n")
-  const timeLine = splitInput[0]
-  const distanceLine = splitInput[1]
-  const timeValues = timeLine.match(/\d+/g)
-  const distanceValues = distanceLine.match(/\d+/g)
+  const timeValues = splitInput[0].match(/\d+/g)
+  const distanceValues = splitInput[1].match(/\d+/g)
 
   let waysToWinAllRaces = []
 
@@ -32,10 +30,8 @@ const part1 = (input) => {
 
 const part2 = (input) => {
   const splitInput = input.split("\n")
-  const timeLine = splitInput[0]
-  const distanceLine = splitInput[1]
-  const totalTime = timeLine.match(/\d+/g).join("")
-  const distanceToBeat = distanceLine.match(/\d+/g).join("")
+  const totalTime = splitInput[0].match(/\d+/g).join("")
+  const distanceToBeat = splitInput[1].match(/\d+/g).join("")
 
   let firstWinningHoldTime = null
   let lastWinningHoldTime = null
