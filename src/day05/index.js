@@ -1,9 +1,6 @@
 import run from "aocrunner"
 
-const parseInput = (rawInput) => rawInput
-
-const part1 = (rawInput) => {
-  const input = parseInput(rawInput)
+const part1 = (input) => {
 
   const seedNumberRegex = /seeds: ([\s*\d]+)/
   const seedsRegexResult = input.match(seedNumberRegex)[1]
@@ -66,8 +63,7 @@ const part1 = (rawInput) => {
   return lowestLocation
 }
 
-const part2 = (rawInput) => {
-  const input = parseInput(rawInput)
+const part2 = (input) => {
 
   const seedNumberRegex = /seeds: ([\s*\d]+)/
   const seedsRegexResult = input.match(seedNumberRegex)[1]
